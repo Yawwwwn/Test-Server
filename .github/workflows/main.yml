@@ -37,7 +37,7 @@ jobs:
           # TARGET: '/var/www/html'
           TARGET: '/test_server_frontend/Test-Server'
 
-      #测试
+      #测试 
       # 5. 重启Nginx
       # - name: Restart Nginx
       #   run: |
