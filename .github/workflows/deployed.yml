@@ -24,7 +24,7 @@ jobs:
           npm install
           npm run build
       
-       # 上传到腾讯云
+       # 步骤3：上传到腾讯云
       - name: Deployed To CloudServer
         #使用Github Actions市场中开源的WorkFlow
         uses: easingthemes/ssh-deploy@v4.1.9 
