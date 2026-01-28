@@ -35,7 +35,7 @@ jobs:
           REMOTE_USER: ${{ secrets.SERVER_USER }}
           # 目标地址
           # TARGET: '/var/www/html'
-          TARGET: '/test_server_frontend/Test-Server/dist;'
+          TARGET: '/test_server_frontend/Test-Server;'
 
       # 5. 重启Nginx
       - name: Restart Nginx
