@@ -4,7 +4,7 @@
 
 <template>
     <div>login</div>
-    <div @click="() => $router.push('echarts')">跳转到:注册页面</div>
+    <div @click="() => $router.push('Register')">跳转到:注册页面</div>
     <RouterLink to="echarts">跳转到:测试Echarts</RouterLink>
 </template>
 
