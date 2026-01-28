@@ -39,6 +39,6 @@ jobs:
 
       #测试
       # 5. 重启Nginx
-      - name: Restart Nginx
-        run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "sudo nginx -s reload"
+      # - name: Restart Nginx
+      #   run: |
+      #     ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "sudo nginx -s reload"
