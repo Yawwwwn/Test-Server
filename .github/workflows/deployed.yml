@@ -1,0 +1,44 @@
+#当前WorkFlow的名称，显示在Actions中，方便管理
+name: Deploy to Server
+
+# 监听push行为，触发时执行jobs
+on:
+  push:
+    branches: [ main ]  # main分支push时触发
+
+# 将重复的工作步骤整合成jobs
+jobs:
+  deploy:
+    # Actions运行的虚拟机版本
+    runs-on: ubuntu-latest
+    
+    # 步骤
+    steps:
+      # 步骤1：检出代码
+      - name: Checkout code
+        uses: actions/checkout@main
+      
+      # 步骤2：安装依赖并构建
+      - name: Install & Build Project
+        run: |
+          npm install
+          npm run build
+      
+       # 上传到腾讯云
+      - name: Deployed To CloudServer
+        #使用Github Actions市场中开源的WorkFlow
+        uses: easingthemes/ssh-deploy@v4.1.9 
+        # 携带参数
+        with: 
+          # SCP参数
+          ARGS: '-avzr --delete'
+          # 私钥
+          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          # 用户
+          REMOTE_USER: ${{ secrets.SERVER_USER }}
+          # 服务器ip
+          REMOTE_HOST: ${{ secrets.SERVER_HOST }}
+          # 打包后要上传到云服务器的dist文件（不包含文件夹）
+          SOURCE: 'dist/'
+          # dist在云服务器上的存放路径
+          TARGET: '/test_server_frontend/Test-Server/dist'
