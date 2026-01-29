@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <h1>Vue 3 + Vite 项目</h1>
-    <p>这是一个干净的 Vue 3 项目模板</p>
+    <p>这是一个带路由和状态管理的最小模板</p>
+    <RouterView />
   </div>
 </template>
 
