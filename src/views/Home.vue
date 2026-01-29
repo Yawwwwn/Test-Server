@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" v-if="showHome">
     <h2>学习路线</h2>
     <p>选择一个章节开始学习。</p>
     <ul class="chapter-list">
@@ -12,8 +12,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-  const chapters = ref([
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
+const route = useRoute()
+const showHome = computed(() => route.path === '/')
+const chapters = ref([
   {
     id: 1,
     title: '第1章 数据响应式与原理',
@@ -24,18 +27,9 @@ import { ref } from 'vue'
 </script>
 
 <style scoped>
-.home {
-  padding: 20px;
-}
-.chapter-list {
-  list-style: none;
-  padding: 0;
-}
-.chapter-item {
-  margin: 12px 0;
-  padding: 12px;
-  border: 1px solid #e5e5e5;
-  border-radius: 6px;
-}
+.home { padding: 20px; }
+.chapter-list { list-style: none; padding: 0; }
+.chapter-item { margin: 12px 0; padding: 12px; border: 1px solid #e5e5e5; border-radius: 6px; }
 .chapter-item .desc { color: #555; margin: 6px 0 0; font-size: 0.9em; }
 </style>
+ 

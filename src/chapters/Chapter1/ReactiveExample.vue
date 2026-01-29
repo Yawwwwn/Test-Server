@@ -1,5 +1,6 @@
 <template>
   <div class="example reactive">
+    <div class="intro">Reactive ( reactive() ): Vue 3 提供的用于创建响应式对象的 API，能够让对象属性的变化自动驱动模板更新。</div>
     <h4>Reactive 示例</h4>
     <p>name: {{ state.name }}</p>
     <p>count: {{ state.count }}</p>

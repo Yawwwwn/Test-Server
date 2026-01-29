@@ -1,5 +1,6 @@
 <template>
   <div class="example ref">
+    <div class="intro">Ref ( ref() ): Vue 3 提供的用于包装基本类型的响应式数据的 API，返回一个响应式引用。</div>
     <h4>Ref 示例</h4>
     <p>number: {{ number }}</p>
     <button @click="increment">递增</button>

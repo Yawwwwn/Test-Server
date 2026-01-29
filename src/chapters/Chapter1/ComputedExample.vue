@@ -1,5 +1,6 @@
 <template>
   <div class="example computed">
+    <div class="intro">Computed ( computed() ): 用于定义基于响应式状态的派生值的计算属性，具备缓存机制。</div>
     <h4>Computed 示例</h4>
     <p>base: {{ data.num }}, triple: {{ triple }}</p>
     <button @click="data.num++">自增 base</button>

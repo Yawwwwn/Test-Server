@@ -1,5 +1,6 @@
 <template>
   <div class="example watch">
+    <div class="intro">Watch ( watch() ): 用于侦听响应式数据的变化，以执行副作用处理。</div>
     <h4>Watch 示例</h4>
     <p>counter: {{ counter }}</p>
     <button @click="increment">Increment</button>
