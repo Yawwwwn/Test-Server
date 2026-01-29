@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/views/Home.vue'
+
+// 懒加载首页组件
+const Home = () => import('@/views/Home.vue')
 
 const routes = [
   { path: '/', name: 'Home', component: Home }
